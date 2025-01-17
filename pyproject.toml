@@ -51,7 +51,7 @@ sqlite = "mlflow_go_backend.store.model_registry:_get_sqlalchemy_store"
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["mlflow_go__backend", "mlflow_go_backend.*"]
+include = ["mlflow_go_backend", "mlflow_go_backend.*"]
 exclude = ["tests", "tests.*"]
 
 [tool.ruff]
