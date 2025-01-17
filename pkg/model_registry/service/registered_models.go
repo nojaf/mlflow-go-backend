@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"regexp"
 
-	"github.com/mlflow/mlflow-go/pkg/contract"
-	"github.com/mlflow/mlflow-go/pkg/entities"
-	"github.com/mlflow/mlflow-go/pkg/protos"
+	"github.com/mlflow/mlflow-go-backend/pkg/contract"
+	"github.com/mlflow/mlflow-go-backend/pkg/entities"
+	"github.com/mlflow/mlflow-go-backend/pkg/protos"
 )
 
 var (

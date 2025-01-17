@@ -6,9 +6,9 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/mlflow/mlflow-go/pkg/contract"
-	"github.com/mlflow/mlflow-go/pkg/model_registry/store/sql/models"
-	"github.com/mlflow/mlflow-go/pkg/protos"
+	"github.com/mlflow/mlflow-go-backend/pkg/contract"
+	"github.com/mlflow/mlflow-go-backend/pkg/model_registry/store/sql/models"
+	"github.com/mlflow/mlflow-go-backend/pkg/protos"
 )
 
 func (m *ModelRegistryService) GetLatestVersions(
