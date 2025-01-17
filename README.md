@@ -114,12 +114,12 @@ Sometimes `golangci-lint` can complain about unrelated files, run `golangci-lint
 
 ### Go server
 
-To enable use of the Go server, users can run the `mlflow-go-backend server` command.
+To enable use of the Go server, users can run the `mlflow-go server` command.
 
 ```bash
 # Start the Go server with a database URI
 # Other databases are supported as well: sqlite, mysql and mssql
-mlflow-go-backend server --backend-store-uri postgresql://postgres:postgres@localhost:5432/postgres
+mlflow-go server --backend-store-uri postgresql://postgres:postgres@localhost:5432/postgres
 ```
 
 This will launch the python process as usual. Within Python, a random port is chosen to start the existing server and a Go child process is spawned. The Go server will use the user specified port (5000 by default) and spawn the actual Python server as its own child process (`gunicorn` or `waitress`).
@@ -128,7 +128,7 @@ Any incoming requests the Go server cannot process will be proxied to the existi
 Any Go-specific options can be passed with `--go-opts`, which takes a comma-separated list of key-value pairs.
 
 ```bash
-mlflow-go-backend server --backend-store-uri postgresql://postgres:postgres@localhost:5432/postgres --go-opts log_level=debug,shutdown_timeout=5s
+mlflow-go server --backend-store-uri postgresql://postgres:postgres@localhost:5432/postgres --go-opts log_level=debug,shutdown_timeout=5s
 ```
 
 MLflow client could be pointed the Go server:

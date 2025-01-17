@@ -35,7 +35,7 @@ documentation = "https://mlflow.org/docs/latest/index.html"
 repository = "https://github.com/mlflow/mlflow-go-backend"
 
 [project.scripts]
-mlflow-go-backend = "mlflow_go_backend.cli:cli"
+mlflow-go = "mlflow_go_backend.cli:cli"
 
 [project.entry-points."mlflow.tracking_store"]
 mssql = "mlflow_go_backend.store.tracking:_get_sqlalchemy_store"

@@ -20,7 +20,7 @@ func Dev() error {
 		envs,
 		"uv",
 		"run",
-		"mlflow-go-backend",
+		"mlflow-go",
 		"server",
 		"--backend-store-uri",
 		"postgresql://postgres:postgres@localhost:5432/postgres",
