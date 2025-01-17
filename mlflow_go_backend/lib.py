@@ -97,9 +97,7 @@ def _get_lib():
     # check if the library exists and load it
     path = (
         pathlib.Path(
-            os.environ.get(
-                "MLFLOW_GO_BACKEND_LIBRARY_PATH", pathlib.Path(__file__).parent.as_posix()
-            )
+            os.environ.get("MLFLOW_GO_LIBRARY_PATH", pathlib.Path(__file__).parent.as_posix())
         )
         .joinpath(_get_lib_name())
         .absolute()
