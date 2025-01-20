@@ -11,10 +11,10 @@ import (
 	"gorm.io/gorm"
 	"gorm.io/gorm/clause"
 
-	"github.com/mlflow/mlflow-go/pkg/contract"
-	"github.com/mlflow/mlflow-go/pkg/entities"
-	"github.com/mlflow/mlflow-go/pkg/model_registry/store/sql/models"
-	"github.com/mlflow/mlflow-go/pkg/protos"
+	"github.com/mlflow/mlflow-go-backend/pkg/contract"
+	"github.com/mlflow/mlflow-go-backend/pkg/entities"
+	"github.com/mlflow/mlflow-go-backend/pkg/model_registry/store/sql/models"
+	"github.com/mlflow/mlflow-go-backend/pkg/protos"
 )
 
 func (m *ModelRegistrySQLStore) GetRegisteredModel(
