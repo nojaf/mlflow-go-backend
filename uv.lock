@@ -1030,7 +1030,7 @@ dev = [
 requires-dist = [
     { name = "cffi", specifier = ">=1.17.1" },
     { name = "mlflow", editable = ".mlflow.repo" },
-    { name = "psycopg2-binary", specifier = "==2.9.9" },
+    { name = "psycopg2-binary", specifier = ">=2.9.9" },
 ]
 
 [package.metadata.requires-dev]
