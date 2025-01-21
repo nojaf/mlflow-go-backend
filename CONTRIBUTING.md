@@ -1,5 +1,32 @@
 # Contributing
 
+## Table of Contents
+- [Contributing](#contributing)
+  - [Table of Contents](#table-of-contents)
+  - [Prerequisites](#prerequisites)
+    - [Python](#python)
+    - [Go](#go)
+    - [Protocol Buffer Compiler](#protocol-buffer-compiler)
+  - [Installation](#installation)
+  - [Mage](#mage)
+  - [Common information](#common-information)
+    - [MLflow source code](#mlflow-source-code)
+    - [Protos](#protos)
+    - [Request validation](#request-validation)
+    - [Data access](#data-access)
+    - [Linting](#linting)
+    - [Building the Go binary](#building-the-go-binary)
+  - [Go MLflow server](#go-mlflow-server)
+    - [Approach](#approach)
+    - [Run with Mage](#run-with-mage)
+  - [Supported endpoints](#supported-endpoints)
+  - [Porting an Endpoint](#porting-an-endpoint)
+  - [Run tests](#run-tests)
+    - [Debug Failing Tests](#debug-failing-tests)
+    - [Targeting Local Postgres in Python Tests](#targeting-local-postgres-in-python-tests)
+
+
+
 ## Prerequisites
 
 To contribute to this project, you need the following:
