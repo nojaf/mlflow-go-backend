@@ -250,17 +250,10 @@ func (s TrackingSQLStore) RestoreExperiment(ctx context.Context, id string) *con
 func (s TrackingSQLStore) GetExperimentByName(
 	ctx context.Context, name string,
 ) (*entities.Experiment, *contract.Error) {
-	var experiment models.Experiment
+	var experiments []models.Experiment
 
-	err := s.db.WithContext(ctx).Preload("Tags").Where("name = ?", name).First(&experiment).Error
+	err := s.db.WithContext(ctx).Preload("Tags").Where("name = ?", name).Find(&experiments).Error
 	if err != nil {
-		if errors.Is(err, gorm.ErrRecordNotFound) {
-			return nil, contract.NewError(
-				protos.ErrorCode_RESOURCE_DOES_NOT_EXIST,
-				fmt.Sprintf("Could not find experiment with name %s", name),
-			)
-		}
-
 		return nil, contract.NewErrorWith(
 			protos.ErrorCode_INTERNAL_ERROR,
 			fmt.Sprintf("failed to get experiment by name %s", name),
@@ -268,7 +261,14 @@ func (s TrackingSQLStore) GetExperimentByName(
 		)
 	}
 
-	return experiment.ToEntity(), nil
+	if len(experiments) == 0 {
+		return nil, contract.NewError(
+			protos.ErrorCode_RESOURCE_DOES_NOT_EXIST,
+			fmt.Sprintf("Could not find experiment with name %s", name),
+		)
+	}
+
+	return experiments[0].ToEntity(), nil
 }
 
 func (s TrackingSQLStore) SearchExperiments(
